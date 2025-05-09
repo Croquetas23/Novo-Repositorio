@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Aviões</title>
+    <title>Aviões - Descubra a História e Tecnologia</title>
 
-    <!-- Melhoria na pré-conexão das fontes -->
+    <!-- Pré-conexão para melhor carregamento de fontes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css">
@@ -14,65 +14,70 @@
 </head>
 
 <body>
-    <header class="p-5 bg-dark text-white">
+    <!-- Cabeçalho -->
+    <header class="p-4 bg-primary text-white">
         <nav class="container d-flex justify-content-between align-items-center">
-            <img src="imagens/download.jpeg" class="nav-img" alt="Logo" loading="lazy">
-            
+            <h1 class="fw-bold fs-3">✈ Aviões</h1>
             <ul class="nav">
-                <li class="nav-item"><a class="nav-link text-white" href="#inicio">Início</a></li>
-                <li class="nav-item"><a class="nav-link text-white" href="#galeria">Fotos</a></li>
+                <li class="nav-item"><a class="nav-link text-white fw-semibold" href="#inicio">Início</a></li>
+                <li class="nav-item"><a class="nav-link text-white fw-semibold" href="#galeria">Galeria</a></li>
             </ul>
-
-            <div id="acessibilidade" class="menu-acessibilidade"></div>
         </nav>
     </header>
 
+    <!-- Seção inicial -->
     <main class="container my-5">
         <section id="inicio" class="text-center my-5">
-            <h1 class="display-4 text-primary">Informações principais</h1>
-            <img src="imagens/aviacc83o1.webp" alt="A imagem mostra um avião moderno" 
-                 title="Os aviões - CC0 Domínio Público / Acervo Arquivo Nacional" 
-                 class="img-fluid img-inicio rounded" loading="lazy">
+            <h2 class="display-4 fw-bold text-primary">O Fascinante Mundo dos Aviões</h2>
+            <p class="lead text-secondary">Descubra a evolução e a tecnologia por trás dessas incríveis máquinas voadoras.</p>
+            <img src="imagens/aviacc83o1.webp" alt="Avião moderno"
+                 class="img-fluid img-inicio rounded shadow-lg" loading="lazy">
         </section>
 
+        <!-- Seção sobre aeronaves -->
         <section id="Aeronave" class="my-5">
             <div class="container d-flex flex-column flex-md-row align-items-center">
                 <div class="col-md-4 text-center">
-                    <img src="imagens/viajar-de-aviao.jpeg" class="rounded-circle img-fluid" 
+                    <img src="imagens/viajar-de-aviao.jpeg" class="rounded-circle img-fluid shadow-sm"
                          alt="Pessoa olhando pela janela do avião" loading="lazy">
                 </div>
                 <div class="col-md-6">
-                    <h2 class="text-primary">O que são os aviões? E como surgiram?</h2>
-                    <p>Os aviões são aeronaves que se sustentam no ar por meio de asas fixas e motores. 
-                       Os primeiros modelos eram de madeira, mas hoje são feitos de materiais leves e resistentes, 
-                       como fibra de carbono e Kevlar.</p>
+                    <h2 class="text-primary">O Que São os Aviões?</h2>
+                    <p class="fs-5 text-secondary">Aviões são aeronaves que se sustentam no ar por meio de asas fixas e motores. 
+                        Ao longo da história, passaram de estruturas de madeira a materiais leves e resistentes como fibra de carbono.</p>
                 </div>
             </div>
         </section>
 
+        <!-- Galeria de imagens -->
         <section id="galeria">
-            <h2 class="text-center text-primary">Fotos</h2>
+            <h2 class="text-center text-primary fw-bold">Galeria de Fotos</h2>
             <div class="container p-3 mt-3">
                 <div class="row g-4">
                     <div class="col-md-6">
-                        <img src="imagens/dumont_14Bis_01.jpg" class="img-fluid rounded-5" alt="Avião 14 Bis" loading="lazy">
+                        <img src="imagens/dumont_14Bis_01.jpg" class="img-fluid rounded-4 shadow-sm"
+                             alt="O histórico 14 Bis" loading="lazy">
                     </div>
                     <div class="col-md-6">
-                        <img src="imagens/unnamed.jpg" class="img-fluid rounded-5" alt="Avião em voo" loading="lazy">
+                        <img src="imagens/unnamed.jpg" class="img-fluid rounded-4 shadow-sm"
+                             alt="Avião moderno em voo" loading="lazy">
                     </div>
                     <div class="col-md-6">
-                        <img src="imagens/Design-sem-nome.jpg" class="img-fluid rounded-5" alt="Esquema de um avião" loading="lazy">
+                        <img src="imagens/Design-sem-nome.jpg" class="img-fluid rounded-4 shadow-sm"
+                             alt="Esquema técnico de um avião" loading="lazy">
                     </div>
                     <div class="col-md-6">
-                        <img src="imagens/Coanda-1910_front_quarter_view.jpg" class="img-fluid rounded-5" alt="Modelo antigo de avião" loading="lazy">
+                        <img src="imagens/Coanda-1910_front_quarter_view.jpg" class="img-fluid rounded-4 shadow-sm"
+                             alt="Modelo pioneiro de avião" loading="lazy">
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer class="text-center p-3 bg-dark text-white">
-        <p class="mt-3">Feito por aluno. Desenvolvido no VsCode.</p>
+    <!-- Rodapé -->
+    <footer class="text-center p-4 bg-primary text-white">
+        <p class="fs-6">Desenvolvido por aluno | Projeto acadêmico 🚀</p>
     </footer>
 
     <script src="script.js"></script>
