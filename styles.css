@@ -4,25 +4,29 @@
 :root {
     --azul-principal: #2088dd;
     --branco-fundo: #ffffff;
-    --cinza-suave: #FAF4F4;
+    --cinza-suave: #f8f9fa;
     --laranja-botao: #CB6D43;
+    --preto-suave: #343a40;
 }
 
 body {
     font-size: 1rem;
     font-family: 'Montserrat', sans-serif;
     background-color: var(--branco-fundo);
+    color: var(--preto-suave);
     margin: 0;
     padding: 0;
 }
 
+/* Cabeçalho */
 header {
-    background-color: var(--branco-fundo);
-    padding: 1rem 0;
+    background-color: var(--azul-principal);
+    padding: 1.5rem 0;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .nav-link {
-    color: var(--azul-principal);
+    color: var(--branco-fundo);
     font-weight: 600;
     transition: color 0.3s ease-in-out;
 }
@@ -31,26 +35,29 @@ header {
     color: var(--laranja-botao);
 }
 
+/* Seção inicial */
 .inicio-fundo {
     background-image: url('/imagens/Airbus_A380_blue_sky.jpg.webp');
     background-size: cover;
     background-position: center;
-    border-radius: 40px;
+    border-radius: 20px;
     width: 100%;
     height: 600px;
     padding: 40px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    text-align: center;
 }
 
 .img-inicio {
-    position: relative;
-    width: 45rem;
+    max-width: 100%;
     height: auto;
-    border-radius: 10px;
+    border-radius: 15px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
 }
 
+/* Botões */
 .botao-inicio {
     background-color: var(--azul-principal);
     border-radius: 30px;
@@ -60,31 +67,40 @@ header {
     color: white;
     font-weight: bold;
     cursor: pointer;
-    transition: background-color 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out, transform 0.2s;
 }
 
 .botao-inicio:hover {
     background-color: var(--laranja-botao);
+    transform: scale(1.05);
+}
+
+/* Títulos */
+h1, h2 {
+    font-family: 'Lemon', serif;
+    color: var(--azul-principal);
 }
 
 .display-4 {
-    text-shadow: -3px 3px var(--azul-principal);
-    color: white;
+    text-shadow: -3px 3px rgba(32, 136, 221, 0.5);
 }
 
-#tropicalia {
-    position: relative;
-    padding: 5rem 0;
-    background: url('img/flor.png') top right no-repeat,
-                url('imagens/images.jpeg') bottom left no-repeat;
-    background-size: contain;
-}
-
+/* Galeria */
 #galeria {
     background-color: var(--cinza-suave);
     padding: 4rem 0;
 }
 
+.img-galeria {
+    border-radius: 12px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.img-galeria:hover {
+    transform: scale(1.05);
+}
+
+/* Contato */
 #contato {
     background-image: url('img/4965007.jpg');
     background-size: cover;
@@ -93,6 +109,7 @@ header {
     text-align: center;
 }
 
+/* Formulário */
 .formulario {
     background-color: var(--branco-fundo);
     padding: 2rem;
@@ -118,4 +135,12 @@ header {
 .form-control {
     background-color: #F1EDEF;
     border-radius: 5px;
+}
+
+/* Rodapé */
+footer {
+    background-color: var(--preto-suave);
+    padding: 2rem 0;
+    color: white;
+    text-align: center;
 }
