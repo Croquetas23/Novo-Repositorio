@@ -6,16 +6,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Aviões - Descubra a História e Tecnologia</title>
 
-    <!-- Pré-conexão para melhor carregamento de fontes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <style>
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .hover-scale {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .hover-scale:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
 </head>
 
 <body>
     <!-- Cabeçalho -->
-    <header class="p-4 bg-primary text-white">
+    <header class="p-4 bg-primary text-white fade-in hover-scale">
         <nav class="container d-flex justify-content-between align-items-center">
             <h1 class="fw-bold fs-3">✈ Aviões</h1>
             <ul class="nav">
@@ -27,18 +47,18 @@
 
     <!-- Seção inicial -->
     <main class="container my-5">
-        <section id="inicio" class="text-center my-5">
+        <section id="inicio" class="text-center my-5 fade-in">
             <h2 class="display-4 fw-bold text-primary">O Fascinante Mundo dos Aviões</h2>
             <p class="lead text-secondary">Descubra a evolução e a tecnologia por trás dessas incríveis máquinas voadoras.</p>
-            <img src="imagens/aviacc83o1.webp" alt="Avião moderno"
-                 class="img-fluid img-inicio rounded shadow-lg" loading="lazy">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Airplane_flight_Pixabay.jpg/640px-Airplane_flight_Pixabay.jpg" alt="Avião moderno"
+                 class="img-fluid img-inicio rounded shadow-lg hover-scale" loading="lazy">
         </section>
 
         <!-- Seção sobre aeronaves -->
-        <section id="Aeronave" class="my-5">
+        <section id="Aeronave" class="my-5 fade-in">
             <div class="container d-flex flex-column flex-md-row align-items-center">
                 <div class="col-md-4 text-center">
-                    <img src="imagens/viajar-de-aviao.jpeg" class="rounded-circle img-fluid shadow-sm"
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Airplane_view.jpg/640px-Airplane_view.jpg" class="rounded-circle img-fluid shadow-sm hover-scale"
                          alt="Pessoa olhando pela janela do avião" loading="lazy">
                 </div>
                 <div class="col-md-6">
@@ -50,25 +70,25 @@
         </section>
 
         <!-- Galeria de imagens -->
-        <section id="galeria">
+        <section id="galeria" class="fade-in">
             <h2 class="text-center text-primary fw-bold">Galeria de Fotos</h2>
             <div class="container p-3 mt-3">
                 <div class="row g-4">
                     <div class="col-md-6">
-                        <img src="imagens/dumont_14Bis_01.jpg" class="img-fluid rounded-4 shadow-sm"
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/14bis.jpg/640px-14bis.jpg" class="img-fluid rounded-4 shadow-sm hover-scale"
                              alt="O histórico 14 Bis" loading="lazy">
                     </div>
                     <div class="col-md-6">
-                        <img src="imagens/unnamed.jpg" class="img-fluid rounded-4 shadow-sm"
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Boeing_747-8_first_flight_Everett.jpg/640px-Boeing_747-8_first_flight_Everett.jpg" class="img-fluid rounded-4 shadow-sm hover-scale"
                              alt="Avião moderno em voo" loading="lazy">
                     </div>
                     <div class="col-md-6">
-                        <img src="imagens/Design-sem-nome.jpg" class="img-fluid rounded-4 shadow-sm"
-                             alt="Esquema técnico de um avião" loading="lazy">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Airbus_A320neo_first_flight.jpg/640px-Airbus_A320neo_first_flight.jpg" class="img-fluid rounded-4 shadow-sm hover-scale"
+                             alt="Airbus A320 neo" loading="lazy">
                     </div>
                     <div class="col-md-6">
-                        <img src="imagens/Coanda-1910_front_quarter_view.jpg" class="img-fluid rounded-4 shadow-sm"
-                             alt="Modelo pioneiro de avião" loading="lazy">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Coanda-1910-Replica.jpg/640px-Coanda-1910-Replica.jpg" class="img-fluid rounded-4 shadow-sm hover-scale"
+                             alt="Modelo pioneiro de avião Coandă" loading="lazy">
                     </div>
                 </div>
             </div>
@@ -76,11 +96,26 @@
     </main>
 
     <!-- Rodapé -->
-    <footer class="text-center p-4 bg-primary text-white">
+    <footer class="text-center p-4 bg-primary text-white fade-in hover-scale">
         <p class="fs-6">Desenvolvido por aluno | Projeto acadêmico 🚀</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        gsap.utils.toArray('.fade-in').forEach(element => {
+            gsap.from(element, {
+                opacity: 0,
+                y: 50,
+                duration: 1,
+                scrollTrigger: {
+                    trigger: element,
+                    start: "top 80%",
+                    toggleActions: "play none none none"
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>
