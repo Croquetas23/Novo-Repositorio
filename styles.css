@@ -1,146 +1,63 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lemon&display=swap');
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Aviões - Descubra a História e Tecnologia</title>
 
-:root {
-    --azul-principal: #2088dd;
-    --branco-fundo: #ffffff;
-    --cinza-suave: #f8f9fa;
-    --laranja-botao: #CB6D43;
-    --preto-suave: #343a40;
-}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header class="p-4 bg-primary text-white fade-in hover-scale">
+        <nav class="container d-flex justify-content-between align-items-center">
+            <h1 class="fw-bold fs-3">✈ Aviões</h1>
+            <ul class="nav">
+                <li class="nav-item"><a class="nav-link text-white fw-semibold" href="#inicio">Início</a></li>
+                <li class="nav-item"><a class="nav-link text-white fw-semibold" href="#galeria">Galeria</a></li>
+            </ul>
+        </nav>
+    </header>
 
-body {
-    font-size: 1rem;
-    font-family: 'Montserrat', sans-serif;
-    background-color: var(--branco-fundo);
-    color: var(--preto-suave);
-    margin: 0;
-    padding: 0;
-}
+    <!-- Seção inicial -->
+    <main class="container my-5">
+        <section id="inicio" class="text-center my-5 fade-in">
+            <h2 class="display-4 fw-bold text-primary">O Fascinante Mundo dos Aviões</h2>
+            <p class="lead text-secondary">Descubra a evolução e a tecnologia por trás dessas incríveis máquinas voadoras.</p>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/3/36/Airplane_flight_Pixabay.jpg" 
+                 alt="Avião moderno em pleno voo"
+                 class="img-fluid img-inicio rounded shadow-lg hover-scale" loading="lazy">
+        </section>
 
-/* Cabeçalho */
-header {
-    background-color: var(--azul-principal);
-    padding: 1.5rem 0;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-}
+        <!-- Seção sobre aeronaves -->
+        <section id="aeronave" class="my-5 fade-in">
+            <div class="container d-flex flex-column flex-md-row align-items-center">
+                <div class="col-md-4 text-center">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/f/f8/Airplane_view.jpg" 
+                         class="rounded-circle img-fluid shadow-sm hover-scale"
+                         alt="Vista da janela do avião" loading="lazy">
+                </div>
+                <div class="col-md-6">
+                    <h2 class="text-primary">O Que São os Aviões?</h2>
+                    <p class="fs-5 text-secondary">
+                        Aviões são aeronaves que se sustentam no ar por meio de asas fixas e motores. 
+                        Ao longo da história, passaram de estruturas de madeira para materiais leves e resistentes como fibra de carbono.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
 
-.nav-link {
-    color: var(--branco-fundo);
-    font-weight: 600;
-    transition: color 0.3s ease-in-out;
-}
+    <!-- Rodapé -->
+    <footer class="text-center p-4 bg-primary text-white fade-in hover-scale">
+        <p class="fs-6">Desenvolvido por aluno | Projeto acadêmico 🚀</p>
+    </footer>
 
-.nav-link:hover {
-    color: var(--laranja-botao);
-}
-
-/* Seção inicial */
-.inicio-fundo {
-    background-image: url('/imagens/Airbus_A380_blue_sky.jpg.webp');
-    background-size: cover;
-    background-position: center;
-    border-radius: 20px;
-    width: 100%;
-    height: 600px;
-    padding: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-
-.img-inicio {
-    max-width: 100%;
-    height: auto;
-    border-radius: 15px;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
-}
-
-/* Botões */
-.botao-inicio {
-    background-color: var(--azul-principal);
-    border-radius: 30px;
-    border: none;
-    width: 14em;
-    height: 3em;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s ease-in-out, transform 0.2s;
-}
-
-.botao-inicio:hover {
-    background-color: var(--laranja-botao);
-    transform: scale(1.05);
-}
-
-/* Títulos */
-h1, h2 {
-    font-family: 'Lemon', serif;
-    color: var(--azul-principal);
-}
-
-.display-4 {
-    text-shadow: -3px 3px rgba(32, 136, 221, 0.5);
-}
-
-/* Galeria */
-#galeria {
-    background-color: var(--cinza-suave);
-    padding: 4rem 0;
-}
-
-.img-galeria {
-    border-radius: 12px;
-    transition: transform 0.3s ease-in-out;
-}
-
-.img-galeria:hover {
-    transform: scale(1.05);
-}
-
-/* Contato */
-#contato {
-    background-image: url('img/4965007.jpg');
-    background-size: cover;
-    padding: 4rem 0;
-    color: white;
-    text-align: center;
-}
-
-/* Formulário */
-.formulario {
-    background-color: var(--branco-fundo);
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    font-weight: bold;
-}
-
-.formulario button {
-    background-color: var(--laranja-botao);
-    border: none;
-    font-weight: bold;
-    color: white;
-    padding: 0.5rem 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease-in-out;
-}
-
-.formulario button:hover {
-    background-color: var(--azul-principal);
-}
-
-.form-control {
-    background-color: #F1EDEF;
-    border-radius: 5px;
-}
-
-/* Rodapé */
-footer {
-    background-color: var(--preto-suave);
-    padding: 2rem 0;
-    color: white;
-    text-align: center;
-}
+    <script src="script.js"></script>
+</body>
+</html>
